@@ -89,6 +89,7 @@ export PAGER='less'
 export RUBY_CONFIGURE_OPTS='--disable-install-doc'
 export LESS='-R'
 export DISABLE_SPRING='1'
+# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 ## weLaika works paths
 export WORDPRESS_WORKS_PATH="$HOME/Repos"
@@ -163,3 +164,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 source `brew --prefix`/etc/profile.d/z.sh
+
+function code_socks5_proxy {
+  # Use firefox with SOCKS5
+  # To stop the proxy, `pkill ssh`
+  ssh -f -C -N -D 0.0.0.0:3128 code
+}

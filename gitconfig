@@ -1,6 +1,6 @@
 [user]
-  name = Your Name
-  email = Your email
+  name = Giovanni Messina
+  email = giovanni.messina@welaika.com
 
 [alias]
   # shortcuts
@@ -14,6 +14,8 @@
   ds = diff --staged
   re = reset
   st = status
+  pom = push origin master
+  pum = pull origin master
 
   # info
   log-file = log --follow --patch --
@@ -42,6 +44,7 @@
 
   # safety alias
   pushf = push --force-with-lease
+	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git stash store -m \"$2\" $rev; }; _"
 
 [color]
   ui = auto
@@ -70,6 +73,7 @@
 [diff]
   tool = vimdiff
   compactionHeuristic = 1
+	submodule = log
 
 [pull]
   rebase = true
@@ -82,3 +86,7 @@
 
 [credential]
   helper = osxkeychain
+[status]
+	submodulesummary = 1
+[merge]
+	ff = no
